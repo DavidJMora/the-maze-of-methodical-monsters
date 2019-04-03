@@ -1,4 +1,4 @@
-# The Maze of Methodical Monsters
+# The Maze of Methodical Monsters README
 
 ### Introduction
 
@@ -126,4 +126,4 @@ Is it perfect? No! If you've gotten this far, you could now _make_ it perfect. S
 
 * Add a weapon! Base the player's attack damage on what weapon they have, and "equip" that weapon by having the player set the weapon object as the value in their `weapon` field. Now you could have the player get new weapons (every `n` monsters they defeat?). You could even make an array of weapons and have them either get the next one in the array each time, or get a random weapon. The limits are... limitless?
 
-* Should this game be dungeons-and-dragons style? I mean, it is. But it doesn't have to be! In this totally optional, kind-of-an-aside stretch goal, feel free to "re-theme" our game to be totally non-violent, or to be about chasing pigeons away before they eat all your bread, or fighting T-800 Terminator robots before they send you back in time, or... something better than my ideas! _If that's even possible_.
+* Should this game be dungeons-and-dragons style? I mean, it is. But it doesn't have to be! In this totally optional, kind-of-an-aside stretch goal, feel free to "re-theme" our game to be totally non-violent, or to be about chasing pigeons away before they eat all your bread, or fighting T-800 Terminator robots before they send you back in time, or... a theme that's somehow _even better_ than those ideas.
