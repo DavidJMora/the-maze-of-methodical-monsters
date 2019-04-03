@@ -111,3 +111,19 @@ Is it perfect? No! If you've gotten this far, you could now _make_ it perfect. S
 * Right now, because the `level` is increasing and causing us to take less damage, it's possible for the player to take `0` damage, which is just awkward (what is the monster fighting with and why is his aim so bad with it?), or, worse yet, take negative damage, which will, the way we have it set up, actually _heal_  the player.
 
     Let's make sure that every time the player or monster takes damage, they take at least 1 damage. You can use an `if` statement for this, but it's more fun to use `Math.min`, which is also generally a really useful function as is its sister function of `Math.max`. Check them out!
+
+* This is more of a game design stretch goal than anything else, but try playing around with the properties on `player` to get the game as balanced as possible. Have the player survive most of the time, but not by enough that they feel too safe. Make the game harder as it goes. Properties to play with include:
+    * `baseAttackDamage`
+    * the amount you multiply `baseAttackDamage` by and increment `hitPoints` by when levelling up
+    * how much we subtract from the raw damage taken when we adjust for the `level`
+
+* Add a "New Game" button. This will necessitate a similar method to `monster.respawn`, but for `player`. It will also mean some changes to the `index.html` and `main.js`, but while we skipped DOM manipulation in this project, you still know how to do it!
+
+* Add a boss! Make a new `boss.js` file and link to it in `index.html`. In it, put a `boss` object who hits harder, or takes less damage, or just acts in a different way than the regular `monster`. All the following decisions should go in `main.js`, most likely, as they're more "game logic" than "fight logic":
+    * When should the boss appear?
+    * Should we heal the player first?
+    * What "flavor text" should we add to the DOM to announce the boss' arrival? 
+
+* Add a weapon! Base the player's attack damage on what weapon they have, and "equip" that weapon by having the player set the weapon object as the value in their `weapon` field. Now you could have the player get new weapons (every `n` monsters they defeat?). You could even make an array of weapons and have them either get the next one in the array each time, or get a random weapon. The limits are... limitless?
+
+* Should this game be dungeons-and-dragons style? I mean, it is. But it doesn't have to be! In this totally optional, kind-of-an-aside stretch goal, feel free to "re-theme" our game to be totally non-violent, or to be about chasing pigeons away before they eat all your bread, or fighting T-800 Terminator robots before they send you back in time, or... something better than my ideas! _If that's even possible_.
