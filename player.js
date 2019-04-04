@@ -11,7 +11,7 @@ const player = {
         // This pulls the value from any argument with the method of calculateRawDamage
         const rawDamage = enemy.calculateRawDamage();
         // This takes the value of the variable rawDamage and subtracts it from the player's current level and replaces the value in the property of lastDamageTaken
-        this.lastDamageTaken = rawDamage - this.level;
+        this.lastDamageTaken = Math.max(rawDamage - this.level, 1);
         // This variable stores the value of lastDamageTaken subtracted by the player's current hitpoints
         const newHitPoints = this.hitPoints - this.lastDamageTaken;
         // This takes the value of the player's hitpoints and replaces it with the value of newHitPoints
