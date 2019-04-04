@@ -8,7 +8,7 @@ const player = {
     fight: function(enemy) {
         rawDamage = enemy.calculateRawDamage();
         this.lastDamageTaken = rawDamage - this.level;
-        const newHitPoints = this.hitPoints - rawDamage;
+        const newHitPoints = this.hitPoints - this.lastDamageTaken;
         this.hitPoints = newHitPoints;
         if(this.hitPoints <= 0) {
             this.isAlive = false;

@@ -4,10 +4,12 @@ const monster = {
     maxHitPoints: 50,
     lastDamageTaken: 0,
     isAlive: true,
+    baseDamage: 2,
+
     calculateRawDamage: function() {
         const min = Math.min(1);
         const randomDamage = Math.floor(Math.random() * (min + 5));
-        return randomDamage + 2;
+        return randomDamage + this.baseDamage;
     },
     takeDamage: function(rawDamage) {
         const newHitPoints = this.hitPoints - rawDamage;
@@ -26,5 +28,6 @@ const monster = {
         this.isAlive = true;
         this.minHitPoints = this.minHitPoints + 5;
         this.maxHitPoints = this.maxHitPoints + 5;
+        this.baseDamage = Math.ceil(this.baseDamage * 1.2);
     }
 };
