@@ -5,6 +5,6 @@ const monster = {
     calculateRawDamage: function() {
         const min = Math.min(1);
         const randomDamage = Math.ceil(Math.random() * (min + 4));
-        return console.log(randomDamage + 2);
-    }
+        return randomDamage + 2;
+    },
 };
