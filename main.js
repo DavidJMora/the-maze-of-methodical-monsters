@@ -14,7 +14,7 @@ function attackRound(event) {
     }
     
     if (player.isAlive === true) {
-        player.fight(monster)
+        player.fight(monster);
     }
     
     updateHtml();
