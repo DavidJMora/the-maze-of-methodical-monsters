@@ -1,5 +1,9 @@
 const player = {
     isAlive: true,
+    lastDamageTaken: 0,
+    hitPoints: 100,
+    level: 1,
+
     fight: function(enemy) {
         rawDamage = enemy.calculateRawDamage();
         this.lastDamageTaken = rawDamage - this.level;
@@ -10,13 +14,17 @@ const player = {
         }
         enemy.takeDamage(this.calculateRawDamage());
     },
+
     calculateRawDamage: function() {
         const min = Math.min(1);
         const rawDamage = Math.ceil(Math.random() * (min + 4));
         return rawDamage;
     },
-    lastDamageTaken: 0,
-    hitPoints: 100,
-    level: 1,
+
+    levelUp: function() {
+        this.level = this.level + 1;
+        this.hitPoints = this.hitPoints + 30;
+        this.lastDamageTaken = 0;
+    }
 
 }

@@ -11,5 +11,15 @@ const monster = {
         this.lastDamageTaken = rawDamage;
         const newHitPoints = this.hitPoints - rawDamage;
         this.hitPoints = newHitPoints;
+        if(this.hitPoints <= 0) {
+            this.isAlive = false;
+        }
+    },
+    respawn: function() {
+        const min = Math.min(30);
+        const newHitPoints = Math.ceil(Math.random() * (min + min));
+        this.hitPoints = newHitPoints;
+        this.lastDamageTaken = 0;
+        this.isAlive = true;
     }
 };
